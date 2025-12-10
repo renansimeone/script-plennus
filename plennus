@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+# Check if two date arguments are provided
+if [ "$#" -ne 3 ]; then
+  echo "Usage: $0 <start_date> <end_date> <username>"
+  exit 1
+fi
+
+
+start_date="$1"
+end_date="$2"
+username="$3"
+export caminho_script=$(pwd)
+
+echo "+++++++++++++++++++++++++"
+pwd
+
+# informe abaixo o caminho do projeto
+export caminho_projetos='~/Documentos/IdeaProjects'
+
+
+main(){
+	cd $caminho_projetos
+	cd ./e-selecao-admissao
+	rodarScript
+	cd ../e-selecao-admissao-area-candidato-api
+	rodarScript
+	cd ../e-selecao-admissao-area-candidato-fe
+	rodarScript
+	cd ../e-selecao-admissao-client-api
+	rodarScript
+	cd ../e-selecao-admissao-distribuicao-vagas-api
+	rodarScript
+	cd ../e-selecao-admissao-fe-v2
+	rodarScript
+	cd ../e-selecao-distribuicao-vagas-fe
+	rodarScript
+	cd ../e-convocados-fe
+	rodarScript
+}
+
+rodarScript(){
+
+echo "$start_date" "$end_date"
+	git log --since="$start_date" --until="$end_date" --author="$username" --oneline>> $caminho_script/texto.txt
+}
+
+main
+
+
