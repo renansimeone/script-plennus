@@ -16,7 +16,7 @@ echo "+++++++++++++++++++++++++"
 pwd
 
 # informe abaixo o caminho do projeto
-export caminho_projetos='~/Documentos/IdeaProjects'
+export caminho_projetos='~/Ensino/'
 
 
 main(){
@@ -36,6 +36,10 @@ main(){
 	cd ../e-selecao-distribuicao-vagas-fe
 	rodarScript
 	cd ../e-convocados-fe
+	rodarScript
+	cd ../e-temporarios-fe
+	rodarScript
+	cd ../e-temporarios-api
 	rodarScript
 }
 

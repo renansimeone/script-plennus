@@ -1,0 +1,15 @@
+# Ambientes virtuais (qualquer um deles)
+venv/
+.venv/
+env/
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivo de texto temporário do seu script
+texto.txt
+
+# Planilhas geradas (opcional, para não subir os testes que você fizer)
+*.ods
+!padrao.ods
